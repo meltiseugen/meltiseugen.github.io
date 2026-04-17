@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if command -v rbenv >/dev/null 2>&1; then
+  export PATH="$(rbenv root)/shims:${PATH}"
+fi
+
+if ! command -v bundle >/dev/null 2>&1; then
+  echo "Bundler is not installed. Install it with: gem install bundler:2.3.26" >&2
+  exit 1
+fi
+
+ruby_cxx="$(ruby -rrbconfig -e 'print RbConfig::CONFIG["CXX"]')"
+if [[ -z "${ruby_cxx}" || "${ruby_cxx}" == "false" ]]; then
+  sdk_path="$(xcrun --show-sdk-path 2>/dev/null || true)"
+  cxx_include="${sdk_path}/usr/include/c++/v1"
+
+  if ! command -v clang++ >/dev/null 2>&1 || [[ ! -f "${cxx_include}/iostream" ]]; then
+    cat >&2 <<'EOF'
+Native gems need clang++ and the macOS C++ headers, but they were not found.
+
+Fix the Command Line Tools install, then retry:
+
+  xcode-select --install
+  rm -rf vendor/bundle
+  bin/dev
+
+EOF
+    exit 1
+  fi
+
+  echo "Ruby reports CXX=false; using clang++ and SDK C++ headers for native gem builds."
+  export CXX="clang++"
+  export MAKEFLAGS="${MAKEFLAGS:-} CXX=clang++"
+  export CPLUS_INCLUDE_PATH="${cxx_include}${CPLUS_INCLUDE_PATH:+:$CPLUS_INCLUDE_PATH}"
+fi
+
+if ! bundle check >/dev/null 2>&1; then
+  bundle install
+fi
+
+exec env JEKYLL_ENV="${JEKYLL_ENV:-production}" \
+  bundle exec jekyll serve \
+  --livereload \
+  --host 127.0.0.1 \
+  --port "${PORT:-4000}"
