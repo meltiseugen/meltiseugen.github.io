@@ -39,7 +39,22 @@ exclude:
 
 defaults:
   - scope:
-      path: ""
+      path: "about"
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "hobbies"
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "articles"
       type: "pages"
     values:
       layout: "default"

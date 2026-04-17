@@ -6,6 +6,11 @@ has_children: true
 
 Use this section for personal projects, technical experiments, and write-ups that are centered on something you built.
 
+## Current projects
+
+- [HouseOps AI Agent]({{ '/projects/houseops-ai-agent.html' | relative_url }})
+- [World of Warcraft Addons]({{ '/projects/world-of-warcraft-addons/' | relative_url }})
+
 ## Good fits for this section
 
 - Side projects

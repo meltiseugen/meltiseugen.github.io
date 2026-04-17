@@ -1,0 +1,18 @@
+<script>
+  (function () {
+    var themes = [
+      "maker",
+      "terminal",
+      "portfolio",
+      "editorial"
+    ];
+    var savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem("site-theme");
+    } catch (error) {
+      savedTheme = null;
+    }
+    var theme = themes.indexOf(savedTheme) === -1 ? "maker" : savedTheme;
+    document.documentElement.setAttribute("data-site-theme", theme);
+  })();
+</script>
