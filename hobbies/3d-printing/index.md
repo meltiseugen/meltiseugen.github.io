@@ -6,6 +6,10 @@ has_children: true
 
 Use this section for print logs, calibration notes, slicer settings, material comparisons, printer upgrades, and workshop write-ups.
 
+## Current write-ups
+
+- [When an SSR Is Wired on Neutral Instead of Live]({{ '/hobbies/3d-printing/ssr-wired-on-neutral.html' | relative_url }})
+
 ## Good article ideas
 
 - First printer setup notes

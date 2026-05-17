@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1328 534" role="img" aria-labelledby="title desc">
+  <title id="title">Temperature graph before and after correcting SSR switching side</title>
+  <desc id="desc">A dark chart with a red target temperature line and a blue measured temperature line oscillating before becoming stable.</desc>
+  <rect width="1328" height="534" fill="#1e1e1e"/>
+  <g stroke="#7d7d7d" stroke-opacity="0.22" stroke-width="2">
+    <line x1="0" y1="117" x2="1328" y2="117"/>
+    <line x1="0" y1="227" x2="1328" y2="227"/>
+    <line x1="0" y1="330" x2="1328" y2="330"/>
+    <line x1="0" y1="438" x2="1328" y2="438"/>
+    <line x1="163" y1="0" x2="163" y2="534"/>
+    <line x1="380" y1="0" x2="380" y2="534"/>
+    <line x1="531" y1="0" x2="531" y2="534"/>
+    <line x1="724" y1="0" x2="724" y2="534"/>
+    <line x1="918" y1="0" x2="918" y2="534"/>
+    <line x1="1111" y1="0" x2="1111" y2="534"/>
+    <line x1="1260" y1="0" x2="1260" y2="534"/>
+  </g>
+  <path d="M0 396 L1328 396" fill="none" stroke="#e2493d" stroke-width="5" stroke-linecap="round"/>
+  <path
+    d="M0 388
+       C10 430, 24 430, 36 392
+       C48 356, 62 356, 74 394
+       C86 427, 98 426, 110 391
+       C122 359, 136 360, 148 393
+       C160 425, 174 425, 186 392
+       C198 359, 212 359, 224 394
+       C236 425, 248 425, 260 391
+       C272 358, 286 358, 298 394
+       C310 425, 322 424, 334 392
+       C346 358, 360 358, 372 393
+       C384 424, 398 423, 410 394
+       C424 361, 442 360, 456 394
+       C470 420, 492 424, 514 400
+       C526 392, 542 388, 560 390
+       C700 394, 900 396, 1328 397"
+    fill="none"
+    stroke="#1fa0ff"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <g fill="#6e6e6e" font-family="Arial, sans-serif" font-size="18">
+    <text x="0" y="495">15:28</text>
+    <text x="118" y="495">15:30</text>
+    <text x="334" y="495">15:32</text>
+    <text x="485" y="495">15:34</text>
+    <text x="678" y="495">15:36</text>
+    <text x="872" y="495">15:38</text>
+    <text x="1065" y="495">15:40</text>
+    <text x="1214" y="495">15:42</text>
+  </g>
+</svg>
